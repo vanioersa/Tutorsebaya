@@ -1,38 +1,249 @@
-.App {
+.baru {
+  margin: 3px 0px;
+  color: red;
+}
+
+.barunih {
+  text-align: center;
+  margin: 17%;
+}
+
+.butuh {
+  color: blue;
+}
+
+Table {
+  font-family: sans-serif;
+  color: #232323;
+  border-collapse: collapse;
+}
+
+Table,
+th {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+Table,
+th,
+td {
+  border: 1px solid #999;
+  padding: 5px 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  background-color: #34495e;
+  color: #ecf0f1;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
   align-items: center;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ecf0f1;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.content {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content ul li {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.anime-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 30px 250px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.anime-card {
+  width: 325px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.anime-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.anime-card-details {
+  padding: 12px;
+}
+
+.anime-card-name {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.anime-card-description {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.landing-page {
+  position: relative;
+  height: 92vh;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/043/205/689/large/anime-sub-indo-tokyo-ghoul-anime-hd-wallpaper-for-desktop-mobiles-3840x2160.jpg?1636598061"); /* Ganti dengan URL gambar latar belakang Anda */
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.landing-page .container {
+  position: relative;
+  z-index: 1;
+}
+
+.custom-image {
+  width: 100%;
+  max-height: 565px;
+}
+
+.scrollable-cards {
+  display: flex;
+}
+
+.navigation-buttons {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.scrollable-card .prev-button,
+.scrollable-card .next-button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.scrollable-card .prev-button {
+  right: 5px;
+}
+
+.scrollable-card .next-button {
+  left: 5px;
+}
+.scrollable-card {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.text-container {
+  flex: 1;
+}
+
+.about-text {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.about-image {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  color: #666;
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.about-imageeee {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.about-imageeee:hover {
+  transform: scale(1.05);
 }

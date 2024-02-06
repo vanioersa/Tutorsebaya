@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Route, Switch } from "react-router-dom/cjs/react-router-dom.min"; import './App.css';
+import Navbar from './components/navbar';
+import List from './page/list';
+import About from './page/about';
+import Daftar from './page/tugas2';
+import ProductDetail from './page/ProductDetail';
+import Map from "./page/tugas1"
+// import TesJson from "./page/json";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />  
+      {/* <TesJson />   */}
+      <BrowserRouter>
+        <main>
+          <Switch>
+            <Route path="/" component={Map} exact />
+            <Route path="/List" component={List} exact />
+            <Route path="/Daftar" component={Daftar} exact />
+            <Route path="/Daftar" component={Daftar} exact />
+            <Route path="/About" component={About} exact />
+            <Route path="/:Id" component={ProductDetail} />
+          </Switch>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }
