@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import axios from "axios";
 
 const ScrollableCard = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,15 +10,13 @@ const ScrollableCard = () => {
   const [hrefCards, setHrefCards] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3030/scrollable")
-      .then((response) => response.json())
-      .then((data) => setScrollableCards(data))
-      .catch((error) => console.error("Error fetching scrollable cards:", error));
+    axios.get("http://localhost:3030/scrollable")
+      .then((response) => setScrollableCards(response.data))
+      .catch((error) => console.error("terjadi kesalahan", error));
 
-    fetch("http://localhost:3030/products")
-      .then((response) => response.json())
-      .then((data) => setHrefCards(data))
-      .catch((error) => console.error("Error fetching href cards:", error));
+    axios.get("http://localhost:3030/products")
+      .then((response) => setHrefCards(response.data))
+      .catch((error) => console.error("terjadi kesalahan", error));
   }, []);
 
   useEffect(() => {
@@ -26,8 +25,20 @@ const ScrollableCard = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  },);
 
+  const handleDeleteHref = (index) => {
+    const idToDelete = hrefCards[index].id;
+    axios
+      .delete(`http://localhost:3030/products/${idToDelete}`)
+      .then(() => {
+        const updatedHrefCards = [...hrefCards];
+        updatedHrefCards.splice(index, 1);
+        setHrefCards(updatedHrefCards);
+      })
+      .catch((error) => console.error("Gagal menghapus data:", error));
+  };
+  
   const handleNavigation = (direction) => {
     if (direction === "prev") {
       setCurrentIndex((prevIndex) =>
@@ -96,29 +107,45 @@ const ScrollableCard = () => {
         }}
       >
         {hrefCards.map((card, index) => (
-          <a
+          <div
             key={index}
-            href={`/${index + 1}`}
             style={{
-              textDecoration: "none",
-              color: "inherit",
               width: "100%",
               flex: "1 0 18rem",
               minWidth: "18rem",
               margin: "10px 25px",
             }}
           >
-            <Card style={{ width: "100%" }}>
-              <Card.Img
-                variant="top"
-                src={card.imageUrl}
-                style={{ width: "100%", height: "200px" }}
-              />
-              <Card.Body>
-                <Card.Title>{card.title}</Card.Title>
-              </Card.Body>
-            </Card>
-          </a>
+            <a
+              href={`/detail/${index + 1}`}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                width: "100%",
+              }}
+            >
+              <Card style={{ width: "100%" }}>
+                <Card.Img
+                  variant="top"
+                  src={card.imageUrl}
+                  style={{ width: "100%", height: "200px" }}
+                />
+                <Card.Body>
+                  <Card.Title>{card.title}</Card.Title>
+                </Card.Body>
+              </Card>
+            </a>
+            <Button
+              variant="danger"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDeleteHref(index);
+              }}
+              style={{ width: "100%" }}
+            >
+              Delete
+            </Button>
+          </div>
         ))}
       </div>
     </div>

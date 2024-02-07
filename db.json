@@ -1,25 +1,25 @@
 {
   "scrollable": [
     {
-      "id": 1,
+      "id": "1",
       "imageUrl": "https://cdn1.productnation.co/stg/sites/5/6555bf3ec3a97.jpg",
       "title": "Baju Polos",
       "text": "Baju polos yang sederhana namun elegan, cocok untuk berbagai kesempatan."
     },
     {
-      "id": 2,
-      "imageUrl": "https://theexclusivetailor.com/wp-content/uploads/batik-pria.jpeg",
+      "id": "2",
+      "imageUrl": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/89/MTA-140762030/brd-44261_kemeja-batik-pria-murah-lengan-pendek-baju-batik-pria-kemeja-pria-motif-random-m_full10-279337dd.jpg",
       "title": "Baju Batik",
       "text": "Koleksi baju batik dengan motif klasik yang timeless, menambahkan sentuhan budaya pada penampilan Anda."
     },
     {
-      "id": 3,
+      "id": "3",
       "imageUrl": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//102/MTA-8715369/oem_amicable89_fashion_andaru007_baju_kemeja_pria_lengan_pendek_full04_slr1ux42.jpg",
       "title": "Baju Kemeja",
       "text": "Baju kemeja yang nyaman dan bergaya, cocok untuk gaya santai atau formal."
     },
     {
-      "id": 4,
+      "id": "4",
       "imageUrl": "https://customhade.id/wp-content/uploads/2020/03/Baju-Olahraga-Batik-Small.jpeg",
       "title": "Baju Olahraga",
       "text": "Baju olahraga yang ringan dan breathable, memberikan kenyamanan maksimal selama aktivitas fisik."
@@ -27,38 +27,56 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Baju Elegan",
-      "text": "Baju ini memiliki desain yang elegan dan nyaman dipakai sehari-hari.",
+      "description": "Baju ini memiliki desain yang elegan dan nyaman dipakai sehari-hari.",
       "imageUrl": "https://down-id.img.susercontent.com/file/8824c52c4fe12cc901b98c3065bcd57b",
-      "size": ["M", "L", "XL"],
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
       "color": "Red",
       "price": "50,000"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Baju Warna Cerah",
-      "text": "Baju ini hadir dengan warna-warna cerah yang cocok untuk suasana santai.",
+      "description": "Baju ini hadir dengan warna-warna cerah yang cocok untuk suasana santai.",
       "imageUrl": "https://id-test-11.slatic.net/p/5798bcf3c828c74a3124d243192b065a.jpg",
-      "size": ["M", "L", "XL", "XXL"],
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
       "color": "Yellow",
       "price": "45,000"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Baju Multi Fungsi",
-      "text": "Baju ini terbuat dari bahan berkualitas tinggi dan cocok untuk berbagai aktivitas.",
+      "description": "Baju ini terbuat dari bahan berkualitas tinggi dan cocok untuk berbagai aktivitas.",
       "imageUrl": "https://lzd-img-global.slatic.net/g/shop/9acd1d8d796b2c05087b79c0a210b88a.png_960x960q80.png_.webp",
-      "size": ["M", "L", "XL", "XXL"],
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
       "color": "Green",
       "price": "55,000"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Baju Kasual & Formal",
-      "text": "Baju ini adalah pilihan tepat untuk penampilan kasual maupun formal.",
+      "description": "Baju ini adalah pilihan tepat untuk penampilan kasual maupun formal.",
       "imageUrl": "https://down-id.img.susercontent.com/file/05943dcb56898a590870b77807676330",
-      "size": ["M", "L", "XL"],
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
       "color": "Blue",
       "price": "60,000"
     }

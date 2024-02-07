@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom/cjs/react-router-dom.min"; import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import './App.css';
 import Navbar from './components/navbar';
 import List from './page/list';
 import About from './page/about';
@@ -19,7 +20,7 @@ function App() {
             <Route path="/Daftar" component={Daftar} exact />
             <Route path="/Daftar" component={Daftar} exact />
             <Route path="/About" component={About} exact />
-            <Route path="/:Id" component={ProductDetail} />
+            <Route path="/detail/:id_product" component={ProductDetail} />
           </Switch>
         </main>
       </BrowserRouter>

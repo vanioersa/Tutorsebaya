@@ -21,7 +21,7 @@ const About = () => {
     }, 5000); // Change every 10 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  },);
 
   return (
     <Container className="mt-4">
