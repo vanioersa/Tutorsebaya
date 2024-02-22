@@ -1,8 +1,14 @@
 import Card from "react-bootstrap/Card";
 import Nav from "react-bootstrap/Nav";
 import Image from "react-bootstrap/Image";
+import { Button } from "react-bootstrap";
 
 function NavTabsExample() {
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = "/login";
+  };
+
   return (
     <>
       <Card
@@ -12,7 +18,7 @@ function NavTabsExample() {
           zIndex: "100",
           backgroundColor: "rgba(255, 255, 255, 0.9)",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
-          marginBottom: "10px", // Menambah margin bawah agar tidak menghalangi konten di bawahnya
+          marginBottom: "10px",
         }}
       >
         <Card.Header className="d-flex justify-content-between align-items-center text-dark">
@@ -25,9 +31,16 @@ function NavTabsExample() {
               roundedCircle
               style={{ marginRight: "10px" }}
             />
-            <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Elegance Apparel</span>
+            <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              Elegance Apparel
+            </span>
           </div>
-          <Nav variant="tabs" defaultActiveKey="#first" className="d-none d-sm-flex"> {/* Menyembunyikan Nav di layar kecil */}
+          <Nav
+            variant="tabs"
+            defaultActiveKey="#first"
+            className="d-none d-sm-flex"
+          >
+            {" "}
             <Nav.Item>
               <Nav.Link
                 style={{
@@ -42,7 +55,20 @@ function NavTabsExample() {
                 Dashboard
               </Nav.Link>
             </Nav.Item>
-
+            <Nav.Item>
+              <Nav.Link
+                style={{
+                  color: "black",
+                  cursor: "default",
+                  textDecoration: "none",
+                  border: "none",
+                  fontSize: "1rem",
+                }}
+                href="/data"
+              >
+                Data
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Item>
               <Nav.Link
                 style={{
@@ -57,25 +83,27 @@ function NavTabsExample() {
                 Tentang kami
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
-              <Nav.Link
+              <Button
+                variant="link"
                 style={{
-                  cursor: "default",
+                  color: "black",
+                  cursor: "pointer",
                   textDecoration: "none",
-                  border: "none",
                   fontSize: "1rem",
+                  border: "none",
+                  padding: "0",
                 }}
-                href="/"
-                disabled
+                onClick={logout}
               >
-                Telfon
-              </Nav.Link>
+                Keluar
+              </Button>
             </Nav.Item>
           </Nav>
         </Card.Header>
-        
-        <Card.Header className="d-flex justify-content-end align-items-center text-dark d-block d-sm-none"> {/* Menampilkan Nav di layar kecil */}
+
+        <Card.Header className="d-flex justify-content-end align-items-center text-dark d-block d-sm-none">
+          {" "}
           <Nav variant="tabs" defaultActiveKey="#first">
             <Nav.Item>
               <Nav.Link
@@ -91,7 +119,20 @@ function NavTabsExample() {
                 Dashboard
               </Nav.Link>
             </Nav.Item>
-
+            <Nav.Item>
+              <Nav.Link
+                style={{
+                  color: "black",
+                  cursor: "default",
+                  textDecoration: "none",
+                  border: "none",
+                  fontSize: "1rem",
+                }}
+                href="/data"
+              >
+                Data
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Item>
               <Nav.Link
                 style={{
@@ -106,20 +147,21 @@ function NavTabsExample() {
                 Tentang kami
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
-              <Nav.Link
+              <Button
+                variant="link"
                 style={{
-                  cursor: "default",
+                  color: "black",
+                  cursor: "pointer",
                   textDecoration: "none",
-                  border: "none",
                   fontSize: "1rem",
+                  border: "none",
+                  padding: "0",
                 }}
-                href="/"
-                disabled
+                onClick={logout}
               >
-                Telfon
-              </Nav.Link>
+                Keluar
+              </Button>
             </Nav.Item>
           </Nav>
         </Card.Header>

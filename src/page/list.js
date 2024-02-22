@@ -5,22 +5,22 @@ function List() {
   const users = [
     {
       nama: "Andi",
-      username: "Andi 10",
+      username: "Andi",
       email: "email@gmail.com",
     },
     {
       nama: "Wahyu",
-      username: "Wahyu10",
+      username: "Wahyu",
       email: "email@gmail.com",
     },
     {
       nama: "Chandra",
-      username: "Chandra10",
+      username: "Chandra",
       email: "email@gmail.com",
     },
     {
       nama: "Rahma",
-      username: "Rahma10",
+      username: "Rahma",
       email: "email@gmail.com",
     },
   ];

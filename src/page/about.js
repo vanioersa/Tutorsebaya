@@ -1,27 +1,31 @@
-import React, { useState, useEffect } from "react"; // Import React and its hooks
-import { Container, Row, Col } from "react-bootstrap"; // Import other necessary components
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Container, Row, Col } from "react-bootstrap";
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [images, setImages] = useState([]);
 
-  const images = [
-    "https://cdn1.productnation.co/stg/sites/5/6555bf3ec3a97.jpg",
-    "https://theexclusivetailor.com/wp-content/uploads/batik-pria.jpeg",
-    "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//102/MTA-8715369/oem_amicable89_fashion_andaru007_baju_kemeja_pria_lengan_pendek_full04_slr1ux42.jpg",
-    "https://customhade.id/wp-content/uploads/2020/03/Baju-Olahraga-Batik-Small.jpeg",
-    "https://down-id.img.susercontent.com/file/8824c52c4fe12cc901b98c3065bcd57b",
-    "https://id-test-11.slatic.net/p/5798bcf3c828c74a3124d243192b065a.jpg",
-    "https://lzd-img-global.slatic.net/g/shop/9acd1d8d796b2c05087b79c0a210b88a.png_960x960q80.png_.webp",
-    "https://down-id.img.susercontent.com/file/05943dcb56898a590870b77807676330",
-  ];
+  useEffect(() => {
+    // Fetch images from the database
+    axios
+      .get("http://localhost:3030/scrollable")
+      .then((response) => {
+        const fetchedImages = response.data.map((item) => item.imageUrl);
+        setImages(fetchedImages);
+      })
+      .catch((error) => {
+        console.error("Error fetching images:", error);
+      });
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change every 10 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
-  },);
+  }, [images]);
 
   return (
     <Container className="mt-4">
@@ -90,7 +94,7 @@ const About = () => {
         </Col>
         <Col md={6}>
           <div className="image-container">
-            <img
+          <img
               src={images[currentIndex]}
               alt="About Us"
               className="img-fluid about-imageeee"
